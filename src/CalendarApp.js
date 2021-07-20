@@ -1,13 +1,14 @@
 import React from 'react'
-import {AppRouter} from "./router/AppRouter";
-import {AuthContext} from "./auth/AuthContext";
+import { AppRouter } from './router/AppRouter'
+import { AuthContext } from './auth/AuthContext'
+import './styles/styles.scss'
 
 export const CalendarApp = () => {
-    return (
-        <div>
-            <AuthContext.Provider>
-                <AppRouter />
-            </AuthContext.Provider>
-        </div>
-    )
+	return (
+		<>
+			<AuthContext.Provider>
+				<AppRouter />
+			</AuthContext.Provider>
+		</>
+	)
 }

@@ -1,0 +1,118 @@
+button,
+input {
+	margin: 20px;
+}
+
+.auth__login {
+	margin-top: 25%;
+}
+.auth__loginform-1 {
+	border-radius: 5px;
+	box-shadow: $main-shadow;
+	padding: 5%;
+	background: $primary-form;
+}
+.auth__loginform-1 h3 {
+	text-align: center;
+	color: $dark-grey;
+}
+.auth__loginform-2 {
+	border-radius: 5px;
+	box-shadow: $main-shadow;
+	padding: 5%;
+	background: $secondary-form;
+}
+.auth__loginform-2 h3 {
+	text-align: center;
+	color: $white;
+}
+.auth__login form {
+	padding: 10%;
+}
+.auth__btnSubmit {
+	width: 100%;
+	border-radius: 1rem;
+	padding: 1.5%;
+	border: none;
+	cursor: pointer;
+}
+.auth__loginform-1 .auth__btnSubmit {
+	color: $white;
+	background-color: $primary-btn;
+}
+.auth__loginform-2 .auth__btnSubmit {
+	background-color: $dark-grey;
+	color: $white;
+}
+.auth__loginform-2 .ForgetPwd {
+	color: $white;
+	font-weight: 600;
+	text-decoration: none;
+}
+.auth__loginform-1 .ForgetPwd {
+	color: $dark-grey;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.form-group {
+	text-align: center;
+}
+
+footer {
+	background-color: $black;
+	color: $white;
+	font-size: 14px;
+	bottom: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 999;
+}
+
+footer p {
+	margin: 10px 0;
+}
+
+footer i {
+	color: $red;
+}
+
+footer a {
+	color: $blue;
+	text-decoration: none;
+
+	&:hover {
+		color: $white;
+	}
+}
+
+header {
+	background-color: $black;
+	color: $white;
+	font-size: 14px;
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 1;
+}
+
+header p {
+	margin: 10px 0;
+}
+
+header i {
+	color: $red;
+}
+
+header a {
+	color: $blue;
+	text-decoration: none;
+
+	&:hover {
+		color: $white;
+	}
+}
