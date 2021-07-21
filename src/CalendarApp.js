@@ -1,14 +1,15 @@
 import React from 'react'
 import { AppRouter } from './router/AppRouter'
-import { AuthContext } from './auth/AuthContext'
 import './styles/styles.scss'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 export const CalendarApp = () => {
 	return (
 		<>
-			<AuthContext.Provider value={''}>
+			<Provider store={store}>
 				<AppRouter />
-			</AuthContext.Provider>
+			</Provider>
 		</>
 	)
 }
