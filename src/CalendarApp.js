@@ -6,7 +6,7 @@ import './styles/styles.scss'
 export const CalendarApp = () => {
 	return (
 		<>
-			<AuthContext.Provider>
+			<AuthContext.Provider value={''}>
 				<AppRouter />
 			</AuthContext.Provider>
 		</>

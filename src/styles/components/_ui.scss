@@ -1,0 +1,60 @@
+.modal {
+  background: white;
+  border-radius: 5px;
+  color: darken($color: $modal-color, $amount: 10);
+  display: inline;
+  max-height: 720px;
+  max-width: 550px;
+  outline: none;
+  padding: 10px;
+}
+
+.modal-fondo {
+  background-color: $medium-grey;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+.__modal-main {
+  background-color: $primary-form;
+}
+
+.__modal-h1 {
+  text-align: center;
+  text-shadow: 3px 3px darken($color: $primary-form, $amount: 10);
+  color: $primary-btn;
+}
+
+textarea.form-control {
+  width: 95%;
+  margin-left: 15px;
+  resize: none;
+}
+
+input.form-control {
+  width: 95%;
+}
+
+.react-datetime-picker input:focus {
+  outline: none;
+}
+
+.react-datetime-picker__wrapper{
+  border: 0px solid $dark-grey !important;
+  max-height: 35px;
+}
+
+.react-datetime-picker__inputGroup {
+  align-self: center;
+}
+
+.react-datetime-picker__button {
+  align-self: center;
+}
+
+.react-datetime-picker__calendar .react-calendar {
+  font-size: smaller;
+}

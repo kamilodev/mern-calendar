@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Modal from 'react-modal';
+import { EventModal } from '../ui/EventModal'
 
 const customStyles = {
 	content: {
@@ -16,25 +17,21 @@ Modal.setAppElement('#root')
 
 export const CalendarModal = () => {
 
-	const [isOpen, setIsOpen,] = useState(true);
-
 	const closeModal = () => {
-		setIsOpen(false)
+
 	}
 
 	return (
 		<Modal // Working with Redux, not useState
-			isOpen={isOpen}
+			isOpen={true}
 			// onAfterOpen={afterOpenModal}
 			onRequestClose={closeModal}
 			style={customStyles}
 			closeTimeoutMS={400}
-			className='modal'
+			className='modal __modal-main mt-2'
 			overlayClassName='modal-fondo'
 		>
-			<h1>Hola mundo</h1>
-			<hr />
-			<span>Hola de nuevo</span>
+			<EventModal />
 		</Modal>
 	);
 };
