@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux'
 import { uiOpenModal } from '../actions/ui'
 import 'moment/locale/es'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
+import { eventSetActive } from '../actions/events'
+import { AddNewFab } from '../ui/AddNewFab'
 
 export const CalendarScreen = () => {
 	const dispatch = useDispatch()
@@ -21,7 +23,8 @@ export const CalendarScreen = () => {
 	}
 
 	const onSelectEvent = e => {
-		console.log(e)
+		dispatch(eventSetActive(e))
+		dispatch(uiOpenModal())
 	}
 
 	const onViewChange = e => {
@@ -59,7 +62,7 @@ export const CalendarScreen = () => {
 				onView={onViewChange}
 				view={lastView}
 			/>
-
+			<AddNewFab />
 			<CalendarModal />
 		</div>
 	)
