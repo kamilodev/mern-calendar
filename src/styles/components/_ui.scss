@@ -1,12 +1,14 @@
 .modal {
 	background: white;
 	border-radius: 5px;
-	color: darken($color: $modal-color, $amount: 10);
+	color: black;
 	display: inline;
 	max-height: 720px;
 	max-width: 550px;
 	outline: none;
 	padding: 10px;
+	border: 3px solid black;
+	border-color: #bbcbfc;
 }
 
 .modal-fondo {
@@ -19,15 +21,35 @@
 }
 
 .__modal-main {
-	background-color: $primary-form;
+	background-image: linear-gradient(
+		to left bottom,
+		#e0f5ff,
+		#e5f4fe,
+		#eaf2fb,
+		#eef2f8,
+		#f0f1f5,
+		#f2f2f5,
+		#f3f3f4,
+		#f4f4f4,
+		#f7f7f7,
+		#f9f9f9,
+		#fcfcfc,
+		#ffffff
+	);
 }
 
 .__modal-h1 {
 	text-align: center;
-	text-shadow: 3px 3px darken($color: $primary-form, $amount: 10);
-	color: $primary-btn;
+	text-shadow: 3px 3px #bbcbfc;
+	color: darken($color: #bbcbfc, $amount: 30);
 }
 
+.__modal-shadow {
+	box-shadow: 0 2.5px 2.2px rgba(0, 0, 0, 0.025),
+		0 6.4px 5.3px rgba(0, 0, 0, 0.036), 0 12.6px 10px rgba(0, 0, 0, 0.045),
+		0 22.7px 17.9px rgba(0, 0, 0, 0.054),
+		0 41.2px 33.4px rgba(0, 0, 0, 0.065), 0 83px 80px rgba(0, 0, 0, 0.09);
+}
 textarea.form-control {
 	width: 95%;
 	margin-left: 15px;

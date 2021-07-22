@@ -5,7 +5,11 @@ import moment from 'moment'
 import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux'
 import { uiCloseModal } from '../actions/ui'
-import { eventAddNew, eventClearActiveEvent, eventUpdated } from '../actions/events'
+import {
+	eventAddNew,
+	eventClearActiveEvent,
+	eventUpdated,
+} from '../actions/events'
 
 const customStyles = {
 	content: {
@@ -41,8 +45,8 @@ export const CalendarModal = () => {
 	const [formValues, setFormValues] = useState(initEvent)
 	const { notes, title, start, end } = formValues
 
-	useEffect (() => {
-		if(activeEvent){
+	useEffect(() => {
+		if (activeEvent) {
 			setFormValues(activeEvent)
 		} else {
 			setFormValues(initEvent)
@@ -96,9 +100,9 @@ export const CalendarModal = () => {
 			return setTitleValid(false)
 		}
 
-		if(activeEvent){
+		if (activeEvent) {
 			dispatch(eventUpdated(formValues))
-		} else{
+		} else {
 			dispatch(
 				eventAddNew({
 					...formValues,
@@ -111,7 +115,6 @@ export const CalendarModal = () => {
 			)
 		}
 
-
 		setTitleValid(true)
 		closeModal()
 	}
@@ -123,9 +126,12 @@ export const CalendarModal = () => {
 			onRequestClose={closeModal}
 			style={customStyles}
 			closeTimeoutMS={400}
-			className='modal __modal-main mt-2'
+			className='modal __modal-main mt-2 __modal-shadow'
 			overlayClassName='modal-fondo'>
-			<h1 className='__modal-h1 mt-1'> {(activeEvent)? 'Editar Evento' : 'Nuevo evento'} </h1>
+			<h1 className='__modal-h1 mt-1'>
+				{' '}
+				{activeEvent ? 'Editar Evento' : 'Nuevo evento'}{' '}
+			</h1>
 			<hr />
 			<form className='container' onSubmit={handleSubmitForm}>
 				<div className='form-group'>
