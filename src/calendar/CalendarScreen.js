@@ -4,16 +4,21 @@ import { Navbar } from '../ui/Navbar'
 import { messages } from '../helpers/calendar-messages'
 import { CalendarEvent } from './CalendarEvent'
 import { CalendarModal } from './CalendarModal'
-import { events, localizer } from '../helpers/calendar-events-config'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { uiOpenModal } from '../actions/ui'
+import { momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
 import 'moment/locale/es'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import { eventSetActive } from '../actions/events'
 import { AddNewFab } from '../ui/AddNewFab'
 
+moment.locale('es')
+const localizer = momentLocalizer(moment)
+
 export const CalendarScreen = () => {
 	const dispatch = useDispatch()
+	const {events} = useSelector(state => state.calendar)
 
 	const [lastView, setLastView] = useState(
 		localStorage.getItem('lastView') || 'month',
@@ -24,7 +29,6 @@ export const CalendarScreen = () => {
 
 	const onSelectEvent = e => {
 		dispatch(eventSetActive(e))
-		dispatch(uiOpenModal())
 	}
 
 	const onViewChange = e => {
