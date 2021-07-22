@@ -1,14 +1,14 @@
 .modal {
-	background: white;
+	background: $white;
 	border-radius: 5px;
-	color: black;
+	color: $black;
 	display: inline;
 	max-height: 720px;
 	max-width: 550px;
 	outline: none;
 	padding: 10px;
-	border: 3px solid black;
-	border-color: #bbcbfc;
+	border: 3px solid $black;
+	border-color: $l-purple;
 }
 
 .modal-fondo {
@@ -40,8 +40,8 @@
 
 .__modal-h1 {
 	text-align: center;
-	text-shadow: 3px 3px #bbcbfc;
-	color: darken($color: #bbcbfc, $amount: 30);
+	-webkit-text-stroke: 1px $blue;
+	color: transparent;
 }
 
 .__modal-shadow {
@@ -82,24 +82,29 @@ input.form-control {
 }
 
 .__ui-fab {
-	border-radius: 100%;
+	border-radius: 40% 60% 69% 31% / 30% 51% 49% 70%;
 	bottom: 25px;
 	font-size: 25px;
 	padding: 20px;
 	position: fixed;
 	right: 25px;
-	color: $white;
-	background-color: $secondary-form;
+	color: $black;
+	border: 3px solid $d-purple;
+	background-color: $white;
 
 	&:hover {
-		color: $black;
-		background-color: $secondary-form;
+		color: $red;
+		background-color: $white;
+		border-color: $modal-color;
 	}
+}
 
-	&:focus {
-		color: lighten($color: $white, $amount: 10);
-		background-color: lighten($color: $secondary-form, $amount: 10);
-	}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+	color: $black;
+	border: 3px solid $d-purple;
+	background-color: $white;
+	box-shadow: none;
 }
 
 .__ui-fab-delete {
@@ -107,4 +112,46 @@ input.form-control {
 	padding: 10px;
 	position: fixed;
 	left: 25px;
+	background-color: $d-purple;
+	border-color: $black;
+}
+
+.rbc-event div {
+	color: $white;
+}
+
+.rbc-agenda-table tr {
+	color: $dark-grey;
+}
+
+.rbc-agenda-table td {
+	color: $white;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+	border-left: 1px solid $purple;
+}
+
+.rbc-month-row + .rbc-month-row {
+	border-top: 1px solid $purple;
+}
+
+.rbc-off-range-bg {
+	background: lighten($color: $grey-light, $amount: 5);
+}
+
+.rbc-event {
+	padding: 5px 5px;
+	border: 2px solid $d-purple;
+}
+
+.rbc-toolbar {
+	margin: 5px 20px 5px 20px;
+}
+
+.navbar-dark .navbar-brand {
+	padding-left: 25px;
+	font-weight: bold;
+	font-size: 20px;
+	color: $d-purple;
 }

@@ -12,14 +12,14 @@ import 'moment/locale/es'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import { eventSetActive, eventClearActiveEvent } from '../actions/events'
 import { AddNewFab } from '../ui/AddNewFab'
-import {DeleteEventFab} from '../ui/DeleteEventFab'
+import { DeleteEventFab } from '../ui/DeleteEventFab'
 
 moment.locale('es')
 const localizer = momentLocalizer(moment)
 
 export const CalendarScreen = () => {
 	const dispatch = useDispatch()
-	const {events, activeEvent} = useSelector(state => state.calendar)
+	const { events, activeEvent } = useSelector(state => state.calendar)
 
 	const [lastView, setLastView] = useState(
 		localStorage.getItem('lastView') || 'month',
@@ -37,13 +37,13 @@ export const CalendarScreen = () => {
 		localStorage.setItem('lastView', e)
 	}
 
-	const onSelectSlot = (e) => {
+	const onSelectSlot = e => {
 		dispatch(eventClearActiveEvent())
 	}
 
 	const eventGetter = (event, start, end, isSelected) => {
 		const style = {
-			backgroundColor: '#C6D13B',
+			backgroundColor: '#416EAD',
 			borderRadius: '0px',
 			opacity: 0.8,
 			display: 'block',
@@ -74,9 +74,7 @@ export const CalendarScreen = () => {
 				view={lastView}
 			/>
 			<AddNewFab />
-			{
-				(activeEvent) && <DeleteEventFab />
-			}
+			{activeEvent && <DeleteEventFab />}
 			<CalendarModal />
 		</div>
 	)

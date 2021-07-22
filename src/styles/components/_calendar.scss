@@ -8,8 +8,12 @@
 	height: 100%;
 }
 
+.rbc-today {
+	background-color: #b2bbd7;
+}
+
 /* Modal */
-.ReactModalPortal > div{
+.ReactModalPortal > div {
 	opacity: 0;
 }
 
@@ -17,7 +21,7 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	transition: opacity .4s ease-in-out;
+	transition: opacity 0.4s ease-in-out;
 	z-index: 999;
 }
 
