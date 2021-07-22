@@ -79,3 +79,10 @@ input.form-control {
 		background-color: lighten($color: $secondary-form, $amount: 10);
 	}
 }
+
+.__ui-fab-delete {
+	bottom: 25px;
+	padding: 10px;
+	position: fixed;
+	left: 25px;
+}
