@@ -21,9 +21,7 @@ export const CalendarScreen = () => {
 	const dispatch = useDispatch()
 	const { events, activeEvent } = useSelector(state => state.calendar)
 
-	const [lastView, setLastView] = useState(
-		localStorage.getItem('lastView') || 'month',
-	)
+	const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'month')
 	const onDoubleClick = e => {
 		dispatch(uiOpenModal())
 	}
@@ -53,14 +51,14 @@ export const CalendarScreen = () => {
 	}
 
 	return (
-		<div className='calendar__screen'>
+		<div className="calendar__screen">
 			<Navbar />
 
 			<Calendar
 				localizer={localizer}
 				events={events}
-				startAccesor='start'
-				endAccesor='end'
+				startAccesor="start"
+				endAccesor="end"
 				messages={messages}
 				eventPropGetter={eventGetter}
 				components={{
