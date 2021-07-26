@@ -51,7 +51,6 @@ export const startChecking = () => {
 	return async (dispatch) => {
 		const resp = await fetchWithToken('auth/renew')
 		const body = await resp.json()
-		const error_msg = body.errors ? Object.values(body.errors)[0].msg : body.msg
 
 		if (body.ok) {
 			localStorage.setItem('token', body.token)
@@ -64,7 +63,6 @@ export const startChecking = () => {
 				}),
 			)
 		} else {
-			Swal.fire('Error', error_msg, 'error')
 			dispatch(checkingFinish())
 		}
 	}
