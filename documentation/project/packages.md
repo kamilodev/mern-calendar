@@ -30,6 +30,8 @@ For the correct functioning of the project, It's necessary to install the follow
 npm i sweetalert2
 ```
 
+<br />
+
 ### Moment
 
 :link: [https://www.npmjs.com/package/moment](https://www.npmjs.com/package/moment)
@@ -39,6 +41,8 @@ npm i sweetalert2
 ```javascript=16
 npm i moment
 ```
+
+<br />
 
 ### Node-Sass
 
@@ -50,6 +54,8 @@ npm i moment
 npm i node-sass
 ```
 
+<br />
+
 ### React Big Calendar
 
 :link: [https://www.npmjs.com/package//react-big-calendar](https://www.npmjs.com/package//react-big-calendar)
@@ -59,6 +65,8 @@ npm i node-sass
 ```javascript=16
 npm i react-big-calendar
 ```
+
+<br />
 
 ### React DateTime Picker
 
@@ -70,6 +78,8 @@ npm i react-big-calendar
 npm i react-datetime-picker
 ```
 
+<br />
+
 ### React Modal
 
 :link: [https://www.npmjs.com/package/react-modal](https://www.npmjs.com/package/react-modal)
@@ -79,6 +89,8 @@ npm i react-datetime-picker
 ```javascript=16
 npm i react-modal
 ```
+
+<br />
 
 ### React Router Dom
 
@@ -90,6 +102,8 @@ npm i react-modal
 npm i react-router-dom
 ```
 
+<br />
+
 ### Redux
 
 :link: [https://es.redux.js.org/](https://es.redux.js.org/)
@@ -99,6 +113,8 @@ npm i react-router-dom
 ```javascript=16
 npm i react-redux redux
 ```
+
+<br />
 
 ### Redux Thunk
 
@@ -110,6 +126,8 @@ npm i react-redux redux
 npm i redux-thunk
 ```
 
+<br />
+
 ### Enzyme
 
 :link: [https://enzymejs.github.io/enzyme/](https://enzymejs.github.io/enzyme/)
@@ -119,6 +137,8 @@ npm i redux-thunk
 ```javascript=16
 npm i enzyme
 ```
+
+<br />
 
 ### Enzyme to Json
 
@@ -130,6 +150,8 @@ npm i enzyme
 npm i enzyme-to-json
 ```
 
+<br />
+
 ### Enzyme Adapter
 
 :link: [https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17](https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17)
@@ -139,6 +161,8 @@ npm i enzyme-to-json
 ```javascript=16
 npm i @wojtekmaj/enzyme-adapter-react-17
 ```
+
+<br />
 
 ### Prettier
 
@@ -152,10 +176,16 @@ npm i prettier
 
 ---
 
+<br />
+
 ### Full Script
 
 ```javascript=16
 npm i sweetalert2 moment node-sass react-big-calendar react-datetime-picker react-modal react-router-dom react-redux redux redux-thunk enzyme enzyme-to-json @wojtekmaj/enzyme-adapter-react-17 prettier
 ```
+
+<br />
+
+---
 
 ### [Back](../README.md) :leftwards_arrow_with_hook:

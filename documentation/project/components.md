@@ -1,6 +1,8 @@
 # Components :electron:
 
 ---
+<br/>
+
 ## Login Screen  
 
 ```javascript
@@ -39,6 +41,7 @@ Main component of the Calendar App. It shows a form that offers the user login o
 :file_folder: src / router / AppRouter
 
 ---
+<br />
 
 ## Calendar Event  
 
@@ -75,6 +78,8 @@ Shows the event after being created by the user in the corresponding cell in the
 :file_folder: src / calendar / CalendarScreen
 
 ---
+<br />
+
 ## Calendar Modal  
 
 ```javascript
@@ -113,6 +118,7 @@ Furthermore, it contains several functions that interact between the user and th
 :file_folder: src / calendar / CalendarScreen
 
 ---
+<br />
 
 ## Calendar Screen  
 
@@ -155,6 +161,7 @@ It's the component that shows the entire calendar on the screen.
 :file_folder: src / router / AppRouter
 
 ---
+<br />
 
 ## App Router
 
@@ -190,6 +197,7 @@ Component rendered and optimized using Redux. This allows you to establish a tre
 :file_folder: src / CalendarApp
 
 ---
+<br />
 
 ## Private Route  
 
@@ -223,6 +231,7 @@ Check through a boolean value if the user is authenticated.
 :file_folder: src / router / PrivateRoute
 
 ---
+<br />
 
 ## Public Route  
 
@@ -255,6 +264,7 @@ Check through a boolean value if the user is authenticated.
 :file_folder: src / router / PublicRoute
 
 ---
+<br />
 
 ## Calendar App  
 

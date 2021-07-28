@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). :point_left:
 
+<br />
+
 ## What is this project about?
 
-```diff
-+   It is not public, it must be installed in a private and internal environment.
-```
+-   It is not public, it must be installed in a private and internal environment.
 
 -   It is an App to work in small teams
 
@@ -16,9 +16,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 -   Events have different colors depending on the user who created them.
 
+<br />
+
 ## :globe_with_meridians: Visit the project!
 
 [Click me](https://calendar-mern-pfm.herokuapp.com/) :fire:
+
+<br />
+
+## :books: Readme documentation
+
+[Click me](./documentation) :fire:
+
+<br />
 
 ## Available Scripts
 
