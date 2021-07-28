@@ -7,15 +7,15 @@ import Swal from 'sweetalert2'
 export const LoginScreen = () => {
 	const dispatch = useDispatch()
 	const [formLoginValues, handleLoginInputChange] = useForm({
-		lEmail: 'kamilovanegas@outlook.com',
-		lPassword: '12345678',
+		lEmail: '',
+		lPassword: '',
 	})
 
 	const [formRegisterValues, handleRegisterInputChange] = useForm({
-		rName: 'Andrew',
-		rEmail: 'andrew@outlook.com',
-		rPassword1: '12345678',
-		rPassword2: '12345678',
+		rName: '',
+		rEmail: '',
+		rPassword1: '',
+		rPassword2: '',
 	})
 
 	const { lEmail, lPassword } = formLoginValues
@@ -28,10 +28,10 @@ export const LoginScreen = () => {
 
 	const handleRegister = e => {
 		e.preventDefault()
-		if (rPassword1 !== rPassword2){
+		if (rPassword1 !== rPassword2) {
 			return Swal.fire('Error', 'Passwords must be equals', 'error')
 		}
-			dispatch(startRegister(rName, rEmail, rPassword1))
+		dispatch(startRegister(rName, rEmail, rPassword1))
 	}
 
 	return (

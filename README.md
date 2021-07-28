@@ -4,13 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What is this project about?
 
--   It is an App to work in small teams
+```diff
++   It is not public, it must be installed in a private and internal environment.
+```
 
--   ==It is not public, it must be installed in a private and internal environment.==
+-   It is an App to work in small teams
 
 -   Users who belong to the team can register and create events in a calendar, they can also add notes to describe the event.
 
 -   All users can see events created by others, but cannot edit or delete them.
+
 -   Events have different colors depending on the user who created them.
 
 ## :globe_with_meridians: Visit the project!
