@@ -24,6 +24,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <br />
 
+## :star2: Project Backend Repo
+
+[Click me](https://github.com/kamilodev/mern-calendar-back) :fire:
+
+<br />
+
+## :bookmark_tabs: User Stories Repo
+
+[Click me](https://github.com/orgs/Full-Stack-CICE/projects/1) :fire:
+
+<br />
+
 ## :books: Readme documentation
 
 [Click me](./documentation) :fire:
