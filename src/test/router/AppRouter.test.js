@@ -26,4 +26,30 @@ describe('Test in <AppRouter />', () => {
 
 		expect(wrapper.find('h5').exists()).toBe(true)
 	})
+
+	test('Should display the private route', () => {
+		const initState = {
+			calendar: {
+				events: [],
+			},
+			ui: {
+				modalOpen: false,
+			},
+			auth: {
+				checking: false,
+				uid: 123,
+				name: 'Kamilo',
+			},
+		}
+
+		const store = mockStore(initState)
+		const wrapper = mount(
+			<Provider store={store}>
+				<AppRouter />
+			</Provider>,
+		)
+
+		expect(wrapper).toMatchSnapshot()
+		expect(wrapper.find('.calendar__screen').exists()).toBe(true)
+	})
 })
