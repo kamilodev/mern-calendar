@@ -11,7 +11,7 @@ exports[`Test in <AppRouter /> Should display the private route 1`] = `
       <span
         className="navbar-brand"
       >
-        Hola! Buenas tardes Kamilo
+        Hola! Buenas noches Kamilo
       </span>
       <button
         className="btn btn-outline-danger"

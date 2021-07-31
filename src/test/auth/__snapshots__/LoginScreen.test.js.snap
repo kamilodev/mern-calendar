@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <LoginScreen /> Should displayed correctly 1`] = `
+Array [
+  <header
+    id="nav"
+  >
+    <p>
+      Created with 
+      <i
+        className="fa fa-heart"
+      />
+       by 
+      <a
+        href="https://github.com/kamilodev"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        KamiloDev
+      </a>
+    </p>
+  </header>,
+  <div
+    className="container auth__login"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6 auth__loginform-1"
+      >
+        <h3>
+          Ingreso
+        </h3>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="lEmail"
+              onChange={[Function]}
+              placeholder="Correo"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="lPassword"
+              onChange={[Function]}
+              placeholder="Contraseña"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="auth__btnSubmit"
+              type="submit"
+              value="Login"
+            />
+          </div>
+        </form>
+      </div>
+      <div
+        className="col-md-6 auth__loginform-2"
+      >
+        <h3>
+          Registro
+        </h3>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="rName"
+              onChange={[Function]}
+              placeholder="Nombre"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="rEmail"
+              onChange={[Function]}
+              placeholder="Correo"
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="rPassword1"
+              onChange={[Function]}
+              placeholder="Contraseña"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              name="rPassword2"
+              onChange={[Function]}
+              placeholder="Repita la contraseña"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <input
+              className="auth__btnSubmit"
+              type="submit"
+              value="Crear cuenta"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>,
+  <footer>
+    <p>
+      Created with 
+      <i
+        className="fa fa-heart"
+      />
+       by 
+      <a
+        href="https://github.com/kamilodev"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        KamiloDev
+      </a>
+    </p>
+  </footer>,
+]
+`;
