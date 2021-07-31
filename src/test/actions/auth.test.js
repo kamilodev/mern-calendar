@@ -8,10 +8,6 @@ import { types } from '../../types/types'
 import * as fetchModule from '../../helpers/fetchWithToken'
 import * as fetchModule2 from '../../helpers/fetchWithoutToken'
 
-jest.mock('sweetalert2', () => ({
-	fire: jest.fn(),
-}))
-
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
 
@@ -56,7 +52,7 @@ describe('Test in actions Auth', () => {
 		expect(localStorage.setItem).toHaveBeenCalledWith('token-init-date', expect.any(Number))
 	})
 
-	test('startChecking correcto', async () => {
+	test('startChecking correct', async () => {
 		fetchModule.fetchWithToken = jest.fn(() => ({
 			json() {
 				return {
