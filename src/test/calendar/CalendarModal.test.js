@@ -6,12 +6,17 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import '@testing-library/jest-dom'
 import moment from 'moment'
-import { eventStartUpdate, eventClearActiveEvent } from '../../actions/events'
+import { eventStartUpdate, eventStartAddNew, eventClearActiveEvent } from '../../actions/events'
+import { act } from '@testing-library/react'
+import Swal from 'sweetalert2'
 
 jest.mock('../../actions/events', () => ({
 	eventStartUpdate: jest.fn(),
 	eventClearActiveEvent: jest.fn(),
+	eventStartAddNew: jest.fn(),
 }))
+
+Swal.fire = jest.fn()
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
@@ -70,5 +75,74 @@ describe('Test in <CalendarModal />', () => {
 		})
 
 		expect(wrapper.find('input[name="title"]').hasClass('is-invalid')).toBe(true)
+	})
+
+	test('Should create a new event', () => {
+		const initState = {
+			calendar: {
+				events: [],
+				activeEvent: null,
+			},
+			auth: {
+				uid: '123',
+				name: 'Kamilo',
+			},
+			ui: {
+				modalOpen: true,
+			},
+		}
+		const store = mockStore(initState)
+		store.dispatch = jest.fn()
+
+		const wrapper = mount(
+			<Provider store={store}>
+				<CalendarModal />
+			</Provider>,
+		)
+
+		wrapper.find('input[name="title"]').simulate('change', {
+			target: {
+				name: 'title',
+				value: 'Pruebas',
+			},
+		})
+
+		wrapper.find('form').simulate('submit', {
+			preventDefault() {},
+		})
+
+		expect(eventStartAddNew).toHaveBeenCalledWith({
+			end: expect.anything(),
+			start: expect.anything(),
+			title: 'Pruebas',
+			notes: '',
+		})
+
+		expect(eventClearActiveEvent).toHaveBeenCalled()
+	})
+
+	test('Should validate dates', () => {
+		wrapper.find('input[name="title"]').simulate('change', {
+			target: {
+				name: 'title',
+				value: 'Pruebas',
+			},
+		})
+
+		const hoy = new Date()
+
+		act(() => {
+			wrapper.find('DateTimePicker').at(1).prop('onChange')(hoy)
+		})
+
+		wrapper.find('form').simulate('submit', {
+			preventDefault() {},
+		})
+
+		expect(Swal.fire).toHaveBeenCalledWith(
+			'Error',
+			'La fecha fin debe de ser mayor a la fecha de inicio',
+			'error',
+		)
 	})
 })
