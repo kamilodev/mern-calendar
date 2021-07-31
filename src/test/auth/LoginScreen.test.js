@@ -2,14 +2,18 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Provider } from 'react-redux'
 import { LoginScreen } from '../../auth/LoginScreen'
+import Swal from 'sweetalert2'
+import { startLogin, startRegister } from '../../actions/auth'
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import '@testing-library/jest-dom'
-import { startLogin } from '../../actions/auth'
 
 jest.mock('../../actions/auth', () => ({
 	startLogin: jest.fn(),
+	startRegister: jest.fn(),
 }))
+
+Swal.fire = jest.fn()
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
@@ -25,6 +29,10 @@ const wrapper = mount(
 )
 
 describe('Test in <LoginScreen />', () => {
+	beforeEach(() => {
+		jest.clearAllMocks()
+	})
+
 	test('Should displayed correctly', () => {
 		expect(wrapper).toMatchSnapshot()
 	})
@@ -49,5 +57,79 @@ describe('Test in <LoginScreen />', () => {
 		})
 
 		expect(startLogin).toHaveBeenCalledWith('kamilo@gmail.com', '123456')
+	})
+
+	test('System dont register if passwords are differents', () => {
+		wrapper.find('input[name="rName"]').simulate('change', {
+			target: {
+				name: 'rName',
+				value: 'Andres',
+			},
+		})
+
+		wrapper.find('input[name="rEmail"]').simulate('change', {
+			target: {
+				name: 'rEmail',
+				value: 'andres@gmail.com',
+			},
+		})
+
+		wrapper.find('input[name="rPassword1"]').simulate('change', {
+			target: {
+				name: 'rPassword1',
+				value: '123456',
+			},
+		})
+
+		wrapper.find('input[name="rPassword2"]').simulate('change', {
+			target: {
+				name: 'rPassword2',
+				value: '1234567',
+			},
+		})
+
+		wrapper.find('form').at(1).prop('onSubmit')({
+			preventDefault() {},
+		})
+
+		expect(startRegister).not.toHaveBeenCalled()
+		expect(Swal.fire).toHaveBeenCalledWith('Error', 'Passwords must be equals', 'error')
+	})
+
+	test('Register with same passwords', () => {
+		wrapper.find('input[name="rName"]').simulate('change', {
+			target: {
+				name: 'rName',
+				value: 'Andres',
+			},
+		})
+
+		wrapper.find('input[name="rEmail"]').simulate('change', {
+			target: {
+				name: 'rEmail',
+				value: 'andres@gmail.com',
+			},
+		})
+
+		wrapper.find('input[name="rPassword1"]').simulate('change', {
+			target: {
+				name: 'rPassword1',
+				value: '123456',
+			},
+		})
+
+		wrapper.find('input[name="rPassword2"]').simulate('change', {
+			target: {
+				name: 'rPassword2',
+				value: '123456',
+			},
+		})
+
+		wrapper.find('form').at(1).prop('onSubmit')({
+			preventDefault() {},
+		})
+
+		expect(Swal.fire).not.toHaveBeenCalled()
+		expect(startRegister).toHaveBeenCalledWith('Andres', 'andres@gmail.com', '123456')
 	})
 })
