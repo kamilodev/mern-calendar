@@ -5,11 +5,7 @@ import moment from 'moment'
 import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux'
 import { uiCloseModal } from '../actions/ui'
-import {
-	eventClearActiveEvent,
-	eventStartAddNew,
-	eventStartUpdate,
-} from '../actions/events'
+import { eventClearActiveEvent, eventStartAddNew, eventStartUpdate } from '../actions/events'
 
 const customStyles = {
 	content: {
@@ -22,7 +18,10 @@ const customStyles = {
 	},
 }
 
-Modal.setAppElement('#root')
+if (process.env.NODE_ENV !== 'test') {
+	Modal.setAppElement('#root')
+}
+
 const now = moment().minutes(0).seconds(0).add(1, 'hours') // 3:00:00
 const nowPlus1 = now.clone().add(1, 'hours')
 
@@ -121,70 +120,63 @@ export const CalendarModal = () => {
 			onRequestClose={closeModal}
 			style={customStyles}
 			closeTimeoutMS={400}
-			className='modal __modal-main mt-2 __modal-shadow'
-			overlayClassName='modal-fondo'>
-			<h1 className='__modal-h1 mt-1'>
-				{' '}
-				{activeEvent ? 'Editar Evento' : 'Nuevo evento'}{' '}
-			</h1>
+			className="modal __modal-main mt-2 __modal-shadow"
+			overlayClassName="modal-fondo">
+			<h1 className="__modal-h1 mt-1"> {activeEvent ? 'Editar Evento' : 'Nuevo evento'} </h1>
 			<hr />
-			<form className='container' onSubmit={handleSubmitForm}>
-				<div className='form-group'>
-					<label className='mt-2'>Fecha y hora inicio</label>
+			<form className="container" onSubmit={handleSubmitForm}>
+				<div className="form-group">
+					<label className="mt-2">Fecha y hora inicio</label>
 					<DateTimePicker
 						onChange={handleStartDateChange}
 						value={dateStart}
-						className='form-control'
+						className="form-control"
 					/>
 				</div>
 
-				<div className='form-group'>
-					<label className='mt-2'>Fecha y hora fin</label>
+				<div className="form-group">
+					<label className="mt-2">Fecha y hora fin</label>
 					<DateTimePicker
 						onChange={handleEndDateChange}
 						value={dateEnd}
 						minDate={dateStart}
-						className='form-control'
+						className="form-control"
 					/>
 				</div>
 
 				<hr />
-				<div className='form-group'>
-					<label className='mt-2'>Titulo y notas</label>
+				<div className="form-group">
+					<label className="mt-2">Titulo y notas</label>
 					<input
-						type='text'
-						className={`form-control ${
-							!titleValid && 'is-invalid'
-						}`}
-						placeholder='Título del evento'
-						name='title'
-						autoComplete='off'
+						type="text"
+						className={`form-control ${!titleValid && 'is-invalid'}`}
+						placeholder="Título del evento"
+						name="title"
+						autoComplete="off"
 						value={title}
 						onChange={handleInputChange}
 					/>
-					<small id='emailHelp' className='form-text text-muted'>
+					<small id="emailHelp" className="form-text text-muted">
 						Una descripción corta
 					</small>
 				</div>
 
-				<div className='form-group'>
+				<div className="form-group">
 					<textarea
-						type='text'
-						className='form-control'
-						placeholder='Notas'
-						rows='5'
-						name='notes'
+						type="text"
+						className="form-control"
+						placeholder="Notas"
+						rows="5"
+						name="notes"
 						value={notes}
 						onChange={handleInputChange}></textarea>
-					<small id='emailHelp' className='form-text text-muted'>
+					<small id="emailHelp" className="form-text text-muted">
 						Información adicional
 					</small>
 				</div>
 
-				<button
-					type='submit'
-					className='btn btn-outline-primary btn-block'>
-					<i className='far fa-save'></i>
+				<button type="submit" className="btn btn-outline-primary btn-block">
+					<i className="far fa-save"></i>
 					<span> Guardar</span>
 				</button>
 			</form>
