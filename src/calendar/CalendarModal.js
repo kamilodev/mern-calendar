@@ -116,12 +116,12 @@ export const CalendarModal = () => {
 	return (
 		<Modal // Working with Redux, not useState
 			isOpen={modalOpen}
-			// onAfterOpen={afterOpenModal}
 			onRequestClose={closeModal}
 			style={customStyles}
 			closeTimeoutMS={400}
 			className="modal __modal-main mt-2 __modal-shadow"
-			overlayClassName="modal-fondo">
+			overlayClassName="modal-fondo"
+			ariaHideApp={!process.env.NODE_ENV === 'test'}>
 			<h1 className="__modal-h1 mt-1"> {activeEvent ? 'Editar Evento' : 'Nuevo evento'} </h1>
 			<hr />
 			<form className="container" onSubmit={handleSubmitForm}>
