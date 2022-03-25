@@ -20,7 +20,7 @@
 		"redux": "^4.1.0",
 		"redux-thunk": "^2.3.0",
 		"sweetalert2": "^11.0.19",
-		"web-vitals": "^1.1.2"
+		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
 		"start": "react-scripts start",
